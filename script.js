@@ -23,10 +23,10 @@ che il valore inserito sia un numero, un fizz, un buzz o un fizzbuzz.
 
 
 //Dichiarazione variabile let i e ciclo for 
-
+/*
 for (let i = 1; i <= 100; i++) {
     //console.log(i);
-    //numeri divisibili per 3 e 5 FizzBuzz
+    //numeri divisibili per 3 e 5 FizzBuzz    
 if (i % 3 === 0 && i % 5 === 0) {
     console.log('FizzBuzz', i);
     //numeri divisibili per 3 Fizz
@@ -35,8 +35,39 @@ if (i % 3 === 0 && i % 5 === 0) {
 } else if (i % 5 === 0) {
     console.log('Buzz', i);   
 }
-}
+}*/
 
 /*Crea un container nel DOM, aggiungendo (attraverso la funzione append()) un elemento 
 html con il numero o la stringa corretta da mostrare.*/
 
+const containerEl =document.querySelector('.container');
+
+
+for (let i = 1; i <= 100; i++) {
+    //console.log(i);
+    //numeri divisibili per 3 e 5 FizzBuzz
+
+    const boxEl = document.createElement('div')
+    boxEl.classList.add('box')
+
+    
+if (i % 3 === 0 && i % 5 === 0) {
+    console.log('FizzBuzz', i);
+    boxEl.innerText = 'FizzBuzz';
+    
+    //numeri divisibili per 3 Fizz
+} else if (i % 3 === 0) {
+    boxEl.innerText = 'Fizz';
+    //numeri divisibili per 5 Buzz
+} else if (i % 5 === 0) {
+    console.log('Buzz', i); 
+    boxEl.innerText = 'Buzz';  
+} else {
+    boxEl.innerHTML = i;
+}
+    containerEl.append(boxEl);
+}
+
+
+/*Applica stili differenti agli elementi aggiunti al DOM nel BONUS 1, a seconda 
+che il valore inserito sia un numero, un fizz, un buzz o un fizzbuzz */
