@@ -39,7 +39,7 @@ if (i % 3 === 0 && i % 5 === 0) {
 
 /*Crea un container nel DOM, aggiungendo (attraverso la funzione append()) un elemento 
 html con il numero o la stringa corretta da mostrare.*/
-
+/*
 const containerEl =document.querySelector('.container');
 
 
@@ -67,7 +67,41 @@ if (i % 3 === 0 && i % 5 === 0) {
 }
     containerEl.append(boxEl);
 }
-
+*/
 
 /*Applica stili differenti agli elementi aggiunti al DOM nel BONUS 1, a seconda 
 che il valore inserito sia un numero, un fizz, un buzz o un fizzbuzz */
+
+const containerEl =document.querySelector('.container');
+
+
+for (let i = 1; i <= 100; i++) {
+    //console.log(i);
+    //numeri divisibili per 3 e 5 FizzBuzz
+
+    const boxEl = document.createElement('div')
+    boxEl.classList.add('box');
+      
+    
+if (i % 3 === 0 && i % 5 === 0) {
+    console.log('FizzBuzz', i);
+    boxEl.innerText = 'FizzBuzz';
+    document.getElementsByClassName("box_fizzbuzz");
+    boxEl.classList.add('box-fizzbuzz');
+    
+    //numeri divisibili per 3 Fizz
+} else if (i % 3 === 0) {
+    boxEl.innerText = 'Fizz';
+    boxEl.classList.add('box-fizz');
+    //numeri divisibili per 5 Buzz
+} else if (i % 5 === 0) {
+    console.log('Buzz', i); 
+    boxEl.innerText = 'Buzz'; 
+    boxEl.classList.add('box-buzz');
+} else {
+    boxEl.innerHTML = i;
+    boxEl.classList.add('box');
+
+}
+    containerEl.append(boxEl);
+}
